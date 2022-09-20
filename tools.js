@@ -54,9 +54,12 @@ export default class MathBase {
 
     static handleNum(n) {
         n = n.toString();
-        let temp = n.split('.');
+        const temp = n.split('.');
         temp.push(temp[1].length);
-        return temp
+        if (+n < 0) {
+        temp[1] = -temp[1];
+        }
+        return temp;
     }
 
     static getInteger(n,m){
